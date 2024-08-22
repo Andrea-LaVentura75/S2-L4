@@ -110,7 +110,7 @@ console.log(reverseString("LAV"));
 */
 const upperFirst = function (stringa) {
   let parole = stringa.split(" ");
-  let letteremaisc = parole.map((parola) => parola.toUpperCase().charAt() + parola.slice(1));
+  let letteremaisc = parole.map((parola) => parola.toUpperCase().charAt() + parola.slice(1) + " ");
   return letteremaisc.join("");
 };
 console.log(upperFirst("ciao come stai"));
@@ -122,12 +122,9 @@ console.log(upperFirst("ciao come stai"));
  della stringa originale.
 */
 const cutString = function (stringa) {
-  let stringaarray = stringa.split("");
-  stringaarray.splice(0, 1);
-  stringaarray.splice(2, 1);
-  return stringaarray.join("");
+  return stringa.slice(1, -1);
 };
-console.log(cutString("ciao"));
+console.log(cutString("akkkkkkkko"));
 /* SCRIVI QUI LA TUA RISPOSTA */
 
 /* ESERCIZIO 10
