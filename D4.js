@@ -107,13 +107,31 @@ console.log(reverseString("LAV"));
 /* ESERCIZIO 8
  Scrivi una funzione di nome "upperFirst", che riceve come parametro una stringa formata da diverse parole.
  La funzione deve rendere maiuscola la prima lettera di ogni parola contenuta nella stringa.
-*/
+
 const upperFirst = function (stringa) {
   let parole = stringa.split(" ");
   let letteremaisc = parole.map((parola) => parola.toUpperCase().charAt() + parola.slice(1) + " ");
   return letteremaisc.join("");
 };
-console.log(upperFirst("ciao come stai"));
+console.log(upperFirst("ciao come stai"));*/
+
+//metodo con for
+const upperFirst = function (stringa) {
+  let words = stringa.split(" ");
+  console.log(words);
+  let contenitore = [];
+  for (i = 0; i < words.length; i++) {
+    let w = words[i];
+    let firstLetter = w.charAt(0).toUpperCase();
+    let remainigLetters = w.slice(1);
+    let completWord = firstLetter + remainigLetters;
+    contenitore.push(completWord);
+  }
+  console.log(contenitore);
+  let contenitoreUnito = contenitore.join(" ");
+  return contenitoreUnito;
+};
+console.log(upperFirst("ciao sono andrea"));
 /* SCRIVI QUI LA TUA RISPOSTA */
 
 /* ESERCIZIO 9

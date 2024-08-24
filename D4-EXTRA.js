@@ -1,18 +1,84 @@
 // Esercizi aggiuntivi (facoltativi) per D4
 
 /* EXTRA 1
- Scrivi una funzione chiamata "checkArray" che riceve un array di numeri casuali (creati con la funzione "giveMeRandom") e per ogni elemento stampa in console
- se il suo valore è maggiore di 5 o no.
+ Scrivi una funzione chiamata "checkArray" che riceve un array di numeri casuali (creati con la funzione "giveMeRandom")
+  e per ogni elemento stampa in console se il suo valore è maggiore di 5 o no.
  La funzione deve inoltre ritornare la somma di tutti i valori maggiori di 5.
 */
-
+const contenitore = [];
+let somma = 0;
+const giveMeRandom = function (numero) {
+  for (i = 0; i < numero; i++) {
+    const numerirandom = Math.floor(Math.random() * 11);
+    contenitore.push(numerirandom);
+  }
+  for (j = 0; j < contenitore.length; j++) {
+    if (contenitore[j] > 5) {
+      console.log(contenitore[j]);
+      somma += contenitore[j];
+    }
+  }
+};
+giveMeRandom(5);
+console.log(contenitore);
+console.log("somma", somma);
 /* SCRIVI QUI LA TUA RISPOSTA */
 
 /* EXTRA 2
- Nel tuo eCommerce disponi di un'array di oggetti chiamato "shoppingCart". Ognuno di questi oggetti ha le seguenti proprietà: "price", "name", "id" e "quantity".
- Crea una funzione chiamata "shoppingCartTotal" che calcola il totale dovuto al negozio (tenendo conto delle quantità di ogni oggetto).
+ Nel tuo eCommerce disponi di un'array di oggetti chiamato "shoppingCart". 
+ Ognuno di questi oggetti ha le seguenti proprietà: "price", "name", "id" e "quantity".
+ Crea una funzione chiamata "shoppingCartTotal" che calcola il totale 
+ dovuto al negozio (tenendo conto delle quantità di ogni oggetto).
 */
+let costoTotale = [];
+let somma2 = 0;
+let prezzo = 0;
+let shoppingCart = [
+  {
+    name: "Pen",
+    id: "85HGF",
+    price: 2,
+    quantity: 20,
+  },
+  {
+    name: "Pencil",
+    id: "85OFD",
+    price: 1,
+    quantity: 10,
+  },
+  {
+    name: "higjlighter",
+    id: "85OPE",
+    price: 3,
+    quantity: 29,
+  },
+];
 
+const shoppingCartTotal = function () {
+  for (i = 0; i < shoppingCart.length; i++) {
+    switch (shoppingCart[i].name) {
+      case "Pen":
+        prezzo = shoppingCart[i].price * shoppingCart[i].quantity;
+        costoTotale.push(prezzo);
+        break;
+      case "Pencil":
+        prezzo = shoppingCart[i].price * shoppingCart[i].quantity;
+        costoTotale.push(prezzo);
+        break;
+      case "higjlighter":
+        prezzo = shoppingCart[i].price * shoppingCart[i].quantity;
+        costoTotale.push(prezzo);
+        break;
+    }
+  }
+  for (k = 0; k < costoTotale.length; k++) {
+    somma2 = somma2 + costoTotale[k];
+  }
+};
+
+shoppingCartTotal();
+console.log("costo dei vari oggetti:", costoTotale);
+console.log("costo totale:", somma2);
 /* SCRIVI QUI LA TUA RISPOSTA */
 
 /* EXTRA 3
